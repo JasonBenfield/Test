@@ -19,7 +19,10 @@ public sealed partial class TestAppApi : AppApiWrapper
         )
     {
         createHomeGroup(sp);
+        createWhateverGroup(sp);
     }
 
     partial void createHomeGroup(IServiceProvider sp);
+
+    partial void createWhateverGroup(IServiceProvider sp);
 }

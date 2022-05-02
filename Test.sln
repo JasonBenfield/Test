@@ -4,6 +4,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestWebApp", "TestWebApp", "{0C3AF276-81BF-4B30-9411-0BA48BBCABDC}"
+	ProjectSection(SolutionItems) = preProject
+		TestWebApp\install.Development.private.json = TestWebApp\install.Development.private.json
+		TestWebApp\install.Production.private.json = TestWebApp\install.Production.private.json
+		TestWebApp\install.Staging.private.json = TestWebApp\install.Staging.private.json
+		TestWebApp\install.Test.private.json = TestWebApp\install.Test.private.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{A40E9E03-9E64-40A6-A2FA-ACB9BF755103}"
 EndProject
@@ -22,6 +28,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSetupApp", "TestWebApp\Apps\TestSetupApp\TestSetupApp.csproj", "{BCC5F0DB-F635-4D68-AAA1-4E802C31BFFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestServiceApp", "TestServiceApp", "{2972B1B5-B9F2-478E-A338-AC612F7BA9A1}"
+	ProjectSection(SolutionItems) = preProject
+		TestServiceApp\install.Development.private.json = TestServiceApp\install.Development.private.json
+		TestServiceApp\install.Production.private.json = TestServiceApp\install.Production.private.json
+		TestServiceApp\install.Staging.private.json = TestServiceApp\install.Staging.private.json
+		TestServiceApp\install.Test.private.json = TestServiceApp\install.Test.private.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{9D4AB029-F7C1-462D-B50B-0C4EE3B6347D}"
 EndProject
@@ -34,6 +46,62 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServiceApp.Extensions", "TestServiceApp\Internal\TestServiceApp.Extensions\TestServiceApp.Extensions.csproj", "{95321D80-88C6-4A4D-8AB8-6842C3D9F301}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSetupApp", "TestServiceApp\Apps\TestSetupApp\TestSetupApp.csproj", "{2E77584F-D36A-48C8-86A0-909076A9C832}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AADAF5D-B1E5-4081-8A7D-9AED8C4FAE0C}"
+	ProjectSection(SolutionItems) = preProject
+		xti.private.ps1 = xti.private.ps1
+		xti.ps1 = xti.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{86E30D2D-96C3-4EBC-906C-1E9988EA7D4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTI_TestAppClient", "TestWebApp\Lib\XTI_TestAppClient\XTI_TestAppClient.csproj", "{EB153753-E8D5-4149-AF85-80C3CA251CE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestConsoleApp", "TestConsoleApp", "{756A8B14-0CC8-4C30-A1C6-E0BB8AE7CC60}"
+	ProjectSection(SolutionItems) = preProject
+		TestConsoleApp\install.Development.private.json = TestConsoleApp\install.Development.private.json
+		TestConsoleApp\install.Production.private.json = TestConsoleApp\install.Production.private.json
+		TestConsoleApp\install.Staging.private.json = TestConsoleApp\install.Staging.private.json
+		TestConsoleApp\install.Test.private.json = TestConsoleApp\install.Test.private.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{239D9A55-DB24-4236-B531-BEB490B53A10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "TestConsoleApp\Apps\TestConsoleApp\TestConsoleApp.csproj", "{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{E96AAFEF-06CA-48F2-ACA5-97AEEF20C598}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTI_TestConsoleAppApi", "TestConsoleApp\Internal\XTI_TestConsoleAppApi\XTI_TestConsoleAppApi.csproj", "{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp.Extensions", "TestConsoleApp\Internal\TestConsoleApp.Extensions\TestConsoleApp.Extensions.csproj", "{8EF2E0C4-9371-4CA5-8CF0-524705714B43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSetupApp", "TestConsoleApp\Apps\TestSetupApp\TestSetupApp.csproj", "{F631E1A8-B504-428A-B0CF-1B57F8C244F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestAuthWebApp", "TestAuthWebApp", "{69F7A34C-865B-49DA-B009-3FF9D1D89689}"
+	ProjectSection(SolutionItems) = preProject
+		TestAuthWebApp\install.Development.private.json = TestAuthWebApp\install.Development.private.json
+		TestAuthWebApp\install.Production.private.json = TestAuthWebApp\install.Production.private.json
+		TestAuthWebApp\install.Staging.private.json = TestAuthWebApp\install.Staging.private.json
+		TestAuthWebApp\install.Test.private.json = TestAuthWebApp\install.Test.private.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{C5AA523D-B1BC-4B3F-BDCA-FFA660A06E6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuthWebApp", "TestAuthWebApp\Apps\TestAuthWebApp\TestAuthWebApp.csproj", "{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{503CCFB2-EC9A-42AE-8FDB-DDE4EADB719A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTI_TestAuthWebAppApi", "TestAuthWebApp\Internal\XTI_TestAuthWebAppApi\XTI_TestAuthWebAppApi.csproj", "{85D92ED9-4571-4878-91DB-4DB1ECA67DE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuthWebApp.ApiControllers", "TestAuthWebApp\Internal\TestAuthWebApp.ApiControllers\TestAuthWebApp.ApiControllers.csproj", "{C6D85D8D-9554-4838-B8D8-B101E8F1F562}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{5A19B627-AE53-4282-AC56-03A670F54E55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTI_TestAuthAppClient", "TestAuthWebApp\Lib\XTI_TestAuthAppClient\XTI_TestAuthAppClient.csproj", "{78C5472A-544F-4948-B0AA-95D9D441D8BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuthApiGeneratorApp", "TestAuthWebApp\Apps\TestAuthApiGeneratorApp\TestAuthApiGeneratorApp.csproj", "{5D13F4F9-22A1-4858-8199-6A55C08FC407}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuthSetupApp", "TestAuthWebApp\Apps\TestAuthSetupApp\TestAuthSetupApp.csproj", "{B408D0BF-D801-41DB-9169-39C86373DEDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +149,50 @@ Global
 		{2E77584F-D36A-48C8-86A0-909076A9C832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E77584F-D36A-48C8-86A0-909076A9C832}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E77584F-D36A-48C8-86A0-909076A9C832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB153753-E8D5-4149-AF85-80C3CA251CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB153753-E8D5-4149-AF85-80C3CA251CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB153753-E8D5-4149-AF85-80C3CA251CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB153753-E8D5-4149-AF85-80C3CA251CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF2E0C4-9371-4CA5-8CF0-524705714B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF2E0C4-9371-4CA5-8CF0-524705714B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF2E0C4-9371-4CA5-8CF0-524705714B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF2E0C4-9371-4CA5-8CF0-524705714B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F631E1A8-B504-428A-B0CF-1B57F8C244F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F631E1A8-B504-428A-B0CF-1B57F8C244F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F631E1A8-B504-428A-B0CF-1B57F8C244F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F631E1A8-B504-428A-B0CF-1B57F8C244F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D92ED9-4571-4878-91DB-4DB1ECA67DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D92ED9-4571-4878-91DB-4DB1ECA67DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D92ED9-4571-4878-91DB-4DB1ECA67DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D92ED9-4571-4878-91DB-4DB1ECA67DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D85D8D-9554-4838-B8D8-B101E8F1F562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D85D8D-9554-4838-B8D8-B101E8F1F562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D85D8D-9554-4838-B8D8-B101E8F1F562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D85D8D-9554-4838-B8D8-B101E8F1F562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C5472A-544F-4948-B0AA-95D9D441D8BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C5472A-544F-4948-B0AA-95D9D441D8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C5472A-544F-4948-B0AA-95D9D441D8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C5472A-544F-4948-B0AA-95D9D441D8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D13F4F9-22A1-4858-8199-6A55C08FC407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D13F4F9-22A1-4858-8199-6A55C08FC407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D13F4F9-22A1-4858-8199-6A55C08FC407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D13F4F9-22A1-4858-8199-6A55C08FC407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B408D0BF-D801-41DB-9169-39C86373DEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B408D0BF-D801-41DB-9169-39C86373DEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B408D0BF-D801-41DB-9169-39C86373DEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B408D0BF-D801-41DB-9169-39C86373DEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +212,23 @@ Global
 		{D47FF0C4-7065-467C-AA00-4314D7EA30EB} = {166E960C-4D4A-445E-AA46-34132FCD978B}
 		{95321D80-88C6-4A4D-8AB8-6842C3D9F301} = {166E960C-4D4A-445E-AA46-34132FCD978B}
 		{2E77584F-D36A-48C8-86A0-909076A9C832} = {9D4AB029-F7C1-462D-B50B-0C4EE3B6347D}
+		{86E30D2D-96C3-4EBC-906C-1E9988EA7D4C} = {0C3AF276-81BF-4B30-9411-0BA48BBCABDC}
+		{EB153753-E8D5-4149-AF85-80C3CA251CE7} = {86E30D2D-96C3-4EBC-906C-1E9988EA7D4C}
+		{239D9A55-DB24-4236-B531-BEB490B53A10} = {756A8B14-0CC8-4C30-A1C6-E0BB8AE7CC60}
+		{EB5EECB7-1DF4-401B-A3D0-66DC9B688B49} = {239D9A55-DB24-4236-B531-BEB490B53A10}
+		{E96AAFEF-06CA-48F2-ACA5-97AEEF20C598} = {756A8B14-0CC8-4C30-A1C6-E0BB8AE7CC60}
+		{64F8FA78-99DE-4452-8DC6-6F3BF1AB8C26} = {E96AAFEF-06CA-48F2-ACA5-97AEEF20C598}
+		{8EF2E0C4-9371-4CA5-8CF0-524705714B43} = {E96AAFEF-06CA-48F2-ACA5-97AEEF20C598}
+		{F631E1A8-B504-428A-B0CF-1B57F8C244F7} = {239D9A55-DB24-4236-B531-BEB490B53A10}
+		{C5AA523D-B1BC-4B3F-BDCA-FFA660A06E6A} = {69F7A34C-865B-49DA-B009-3FF9D1D89689}
+		{A85FC667-DF17-4BD9-910E-0D1A4AD9ACAF} = {C5AA523D-B1BC-4B3F-BDCA-FFA660A06E6A}
+		{503CCFB2-EC9A-42AE-8FDB-DDE4EADB719A} = {69F7A34C-865B-49DA-B009-3FF9D1D89689}
+		{85D92ED9-4571-4878-91DB-4DB1ECA67DE0} = {503CCFB2-EC9A-42AE-8FDB-DDE4EADB719A}
+		{C6D85D8D-9554-4838-B8D8-B101E8F1F562} = {503CCFB2-EC9A-42AE-8FDB-DDE4EADB719A}
+		{5A19B627-AE53-4282-AC56-03A670F54E55} = {69F7A34C-865B-49DA-B009-3FF9D1D89689}
+		{78C5472A-544F-4948-B0AA-95D9D441D8BF} = {5A19B627-AE53-4282-AC56-03A670F54E55}
+		{5D13F4F9-22A1-4858-8199-6A55C08FC407} = {C5AA523D-B1BC-4B3F-BDCA-FFA660A06E6A}
+		{B408D0BF-D801-41DB-9169-39C86373DEDB} = {C5AA523D-B1BC-4B3F-BDCA-FFA660A06E6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1AA69949-E607-4827-A36F-8E5D85EE5BB3}
