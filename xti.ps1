@@ -9,6 +9,8 @@ function Xti-NewVersion {
         [ValidateSet(“major”, "minor", "patch")]
         $VersionType = "minor"
     )
+    $Domain = Get-Domain -EnvName Production
+    $PsBoundParameters.Add("Domain", $Domain)
     New-BaseXtiVersion @PsBoundParameters
 }
 
@@ -50,7 +52,9 @@ function Xti-Build {
 function Xti-Publish {
     param(
         [ValidateSet("Production", "Development")]
-        [string] $EnvName="Development"
+        [string] $EnvName="Development",
+        [ValidateSet("Default", "DB")]
+        $HubAdministrationType = "Default"
     )
     $DestinationMachine = Get-DestinationMachine -EnvName $EnvName
     $PsBoundParameters.Add("DestinationMachine", $DestinationMachine)
@@ -64,7 +68,9 @@ function Xti-Publish {
 function Xti-Install {
     param(
         [ValidateSet("Development", "Production", "Staging", "Test")]
-        $EnvName = "Development"
+        $EnvName = "Development",
+        [ValidateSet("Default", "DB")]
+        $HubAdministrationType = "Default"
     )
     $DestinationMachine = Get-DestinationMachine -EnvName $EnvName
     $PsBoundParameters.Add("DestinationMachine", $DestinationMachine)

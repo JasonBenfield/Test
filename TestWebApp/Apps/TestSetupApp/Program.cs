@@ -9,6 +9,7 @@ using XTI_TestWebAppApi;
 await XtiSetupAppHost.CreateDefault(TestInfo.AppKey, args)
     .ConfigureServices((hostContext, services) =>
     {
+        services.AddSingleton(_ => TestInfo.AppKey);
         services.AddSingleton(_ => AppVersionKey.Current);
         services.AddScoped<AppApiFactory, TestAppApiFactory>();
         services.AddScoped<IAppSetup, TestAppSetup>();

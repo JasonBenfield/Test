@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.6.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="XTI_HubAppClient.WebApp.Extensions" Version="1.4.13" />
+		<PackageReference Include="XTI_WebApp.RCL" Version="1.8.17" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Internal\TestAuthWebApp.ApiControllers\TestAuthWebApp.ApiControllers.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<TypeScriptCompile Include="Scripts\**\*.ts" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="%2a%2a\**" />
+	  <Content Remove="%2a%2a\**" />
+	  <EmbeddedResource Remove="%2a%2a\**" />
+	  <None Remove="%2a%2a\**" />
+	  <TypeScriptCompile Remove="%2a%2a\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <TypeScriptCompile Remove="%2a%2a\%2a.ts" />
+	  <TypeScriptCompile Remove="%2a%2a\%2a.tsx" />
+	</ItemGroup>
+</Project>

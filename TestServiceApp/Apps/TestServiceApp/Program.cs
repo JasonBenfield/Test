@@ -15,9 +15,9 @@ await XtiServiceAppHost.CreateDefault(TestInfo.AppKey, args)
             {
                 agenda.AddScheduled<TestAppApi>
                 (
-                    (api, agenda) =>
+                    (api, agendaItem) =>
                     {
-                        agenda.Action(api.Home.DoSomething.Path)
+                        agendaItem.Action(api.Home.DoSomething.Path)
                             .Interval(TimeSpan.FromMinutes(5))
                             .AddSchedule
                             (
@@ -28,4 +28,6 @@ await XtiServiceAppHost.CreateDefault(TestInfo.AppKey, args)
             }
         );
     })
-    .RunConsoleAsync();
+    .UseWindowsService()
+    .Build()
+    .RunAsync();
