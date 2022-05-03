@@ -1,14 +1,14 @@
-﻿import { Startup } from '@jasonbenfield/sharedwebapp/Startup';
-import { PageFrameView } from '@jasonbenfield/sharedwebapp/PageFrameView';
-import { MainPageView } from './MainPageView';
-import { TextBlock } from '@jasonbenfield/sharedwebapp/Html/TextBlock';
-import { TextInputFormGroup } from '@jasonbenfield/sharedwebapp/Forms/TextInputFormGroup';
+﻿import { HubAppApi } from '@jasonbenfield/hubwebapp/Api/HubAppApi';
+import { PostToLogin } from '@jasonbenfield/hubwebapp/PostToLogin';
 import { AsyncCommand } from '@jasonbenfield/sharedwebapp/Command/AsyncCommand';
+import { TextInputFormGroup } from '@jasonbenfield/sharedwebapp/Forms/TextInputFormGroup';
+import { TextBlock } from '@jasonbenfield/sharedwebapp/Html/TextBlock';
 import { MessageAlert } from '@jasonbenfield/sharedwebapp/MessageAlert';
+import { PageFrameView } from '@jasonbenfield/sharedwebapp/PageFrameView';
+import { Startup } from '@jasonbenfield/sharedwebapp/Startup';
 import { TestAuthAppApi } from '../../TestAuth/Api/TestAuthAppApi';
 import { Apis } from '../Apis';
-import { UrlBuilder } from '@jasonbenfield/sharedwebapp/UrlBuilder';
-import { HubAppApi } from '@jasonbenfield/hubwebapp/Api/HubAppApi';
+import { MainPageView } from './MainPageView';
 
 class MainPage {
     private readonly testAuthApi: TestAuthAppApi;
@@ -20,9 +20,10 @@ class MainPage {
     private readonly alert: MessageAlert;
 
     constructor(page: PageFrameView) {
-        new TextBlock('External Login', this.view.heading);
         this.view = new MainPageView(page);
+        new TextBlock('External Login', this.view.heading);
         let apis = new Apis(page.modalError);
+        this.hubApi = apis.Hub();
         this.testAuthApi = apis.TestAuth();
         this.userName = new TextInputFormGroup('', 'UserName', this.view.userName);
         this.password = new TextInputFormGroup('', 'Password', this.view.password);
@@ -42,47 +43,15 @@ class MainPage {
                 UserName: this.userName.getValue(),
                 Password: this.password.getValue()
             };
-            let result = await this.testAuthApi.Home.Login(loginRequest);
-            if (result) {
+            let authKey = await this.testAuthApi.Home.Login(loginRequest);
+            if (authKey) {
                 this.alert.info('Opening page...');
-                this.postLogin(loginRequest, result);
+                new PostToLogin(this.hubApi).execute(loginRequest, authKey);
             }
         }
         finally {
             this.alert.clear();
         }
-    }
-
-    private postLogin(loginRequest: ITestAuthLoginRequest, authKey: string) {
-        let form = <HTMLFormElement>document.createElement('form');
-        form.action = this.hubApi.Auth.Login
-            .getUrl(null)
-            .value();
-        form.style.position = 'absolute';
-        form.style.top = '-100px';
-        form.style.left = '-100px';
-        form.method = 'POST';
-        let userNameInput = this.createInput('UserName', loginRequest.UserName, 'text');
-        let passwordInput = this.createInput('Password', loginRequest.Password, 'password');
-        let authKeyInput = this.createInput('AuthKey', authKey, 'text');
-        let urlBuilder = UrlBuilder.current();
-        let returnKeyInput = this.createInput('ReturnKey', urlBuilder.getQueryValue('returnKey'));
-        form.append(
-            userNameInput,
-            passwordInput,
-            authKeyInput,
-            returnKeyInput
-        );
-        document.body.append(form);
-        form.submit();
-    }
-
-    private createInput(name: string, value: string, type: string = 'hidden') {
-        let input = <HTMLInputElement>document.createElement('input');
-        input.type = type;
-        input.name = name;
-        input.value = value;
-        return input;
     }
 }
 new MainPage(new Startup().build());

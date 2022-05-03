@@ -13,7 +13,7 @@ internal sealed class LoginAction : AppAction<TestAuthLoginRequest, string>
 
     public Task<string> Execute(TestAuthLoginRequest model)
     {
-        if (new UnverifiedUser().Verify(model.Password))
+        if (!new UnverifiedUser().Verify(model.Password))
         {
             throw new AppException("Password is not correct");
         }

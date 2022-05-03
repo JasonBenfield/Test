@@ -12,7 +12,7 @@ partial class TestAuthAppApi
     {
         home = new HomeGroup
         (
-            source.AddGroup(nameof(Home), ResourceAccess.AllowAuthenticated()),
+            source.AddGroup(nameof(Home), ResourceAccess.AllowAnonymous()),
             sp
         );
     }

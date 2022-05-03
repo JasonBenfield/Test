@@ -10,6 +10,8 @@ public sealed partial class TestAppClient : AppClient
         Whatever = GetGroup((_clientFactory, _tokenAccessor, _url) => new WhateverGroup(_clientFactory, _tokenAccessor, _url));
     }
 
+    public TestRoleNames RoleNames { get; } = TestRoleNames.Instance;
+    public string AppName { get; } = "Test";
     public UserGroup User { get; }
 
     public UserCacheGroup UserCache { get; }

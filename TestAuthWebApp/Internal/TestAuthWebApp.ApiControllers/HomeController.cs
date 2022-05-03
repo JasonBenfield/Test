@@ -1,6 +1,6 @@
 // Generated Code
 namespace TestAuthWebApp.ApiControllers;
-[Authorize]
+[AllowAnonymous]
 public class HomeController : Controller
 {
     private readonly TestAuthAppApi api;
