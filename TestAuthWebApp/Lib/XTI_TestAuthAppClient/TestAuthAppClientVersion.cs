@@ -12,7 +12,7 @@ public sealed class TestAuthAppClientVersion
         string value;
         if (hostEnv.IsProduction())
         {
-            value = "V2";
+            value = "V3";
         }
         else
         {
